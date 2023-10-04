@@ -1,0 +1,35 @@
+.-icon,
+.svg-icon {
+    width: 19px;
+    height: 19px;
+    display: block;
+    margin: 0;
+    cursor: pointer;
+
+    &.arrow {
+        width: 16px;
+        height: 13px;
+    }
+
+    i {
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        height: 100%;
+        display: block;
+
+        stroke: inherit;
+    }
+
+    svg {
+        stroke: inherit;
+    }
+
+    // transition: $transition;
+}
+
+.right-arrow-icon {
+    background-image: url("@/assets/svgs/right-arrow.svg");
+    color: inherit;
+}

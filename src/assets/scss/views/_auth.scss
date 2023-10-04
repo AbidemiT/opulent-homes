@@ -1,0 +1,81 @@
+.auth__wrapper {
+    height: 100vh;
+    background-image: url("@/assets/imgs/bg-bottom.png");
+    background-position: bottom center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media only screen and (min-width: 250px) and (max-width: 480px) {
+       padding: 10px;
+      }
+
+    .auth--card {
+        width: 750px;
+        height: 738px;
+        background-color: #FFFFFFE5;
+        border-radius: $border-radius-lg;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        text-align: center;
+
+        @media only screen and (min-width: 250px) and (max-width: 480px) {
+            width: 100%;
+            height: auto;
+            padding-bottom: 20px;
+          }
+
+        .logo-container {
+            width: 193px;
+            height: 46px;
+            margin-bottom: 44px;
+        }
+
+        .form {
+            margin: 40px 0;
+
+            &.register {
+                width: 454px;
+                margin: 40px auto;
+                display: grid;
+                justify-content: space-between;
+                align-items: center;
+                grid-template-columns: repeat(2, 221px);
+
+                button.btn {
+                    width: 220px;
+                    height: 61px;
+                    padding: 0;
+                    margin-top: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                @media only screen and (min-width: 250px) and (max-width: 480px) {
+                    grid-template-columns: repeat(1, 100%);
+                  }
+            }
+
+            button.btn {
+                display: flex;
+                align-items: center;
+                column-gap: 7px;
+            }
+        }
+
+        .ctas-container {
+            a.ao {
+                display: inline-block;
+                margin-bottom: 52px;
+            }
+        }
+    }
+}
