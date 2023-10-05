@@ -10,13 +10,14 @@
     align-items: center;
 
     @media only screen and (min-width: 250px) and (max-width: 480px) {
-       padding: 10px;
-      }
+        padding: 10px;
+        height: 100vh;
+    }
 
     .auth--card {
         width: 750px;
         height: 738px;
-        background-color: #FFFFFFE5;
+        background-color: #ffffffe5;
         border-radius: $border-radius-lg;
 
         display: flex;
@@ -29,8 +30,9 @@
         @media only screen and (min-width: 250px) and (max-width: 480px) {
             width: 100%;
             height: auto;
-            padding-bottom: 20px;
-          }
+
+            padding: 17px 24px;
+        }
 
         .logo-container {
             width: 193px;
@@ -60,8 +62,9 @@
                 }
 
                 @media only screen and (min-width: 250px) and (max-width: 480px) {
+                    width: auto;
                     grid-template-columns: repeat(1, 100%);
-                  }
+                }
             }
 
             button.btn {
