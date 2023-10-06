@@ -1,0 +1,16 @@
+.btn {
+    display: inline-block;
+    padding: 21px 140px;
+    border-radius: $border-radius-sm;
+    margin-top: 36px;
+
+    &.atgd {
+        background: linear-gradient(113deg, #63C7D3 14.71%, $color-abode-teal-light 100.23%);
+        color: $color-white;
+
+        &:hover {
+            background: linear-gradient(113deg, $color-abode-teal-light 14.71%, $color-abode-teal-light 100.23%);
+        }
+
+    }
+}
