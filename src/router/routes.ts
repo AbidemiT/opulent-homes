@@ -24,4 +24,20 @@ export const Routes: RouteRecordRaw[] = [
             anonymousOnly: true
         }
     },
+    {
+        path: "/forgot-password",
+        name: RoutesNames.forgotPassword,
+        component: () => import(/*chunkName: "forgot-password" */ "@/views/ForgotPassword.vue"),
+        meta: {
+            anonymousOnly: true
+        }
+    },
+    {
+        path: "/verify-otp",
+        name: RoutesNames.verifyOtp,
+        component: () => import(/*chunkName: "verify-otp" */ "@/views/VerifyOtp.vue"),
+        meta: {
+            anonymousOnly: true
+        }
+    },
 ]

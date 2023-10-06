@@ -34,7 +34,7 @@
                 <button class="btn atgd fw-700">Login Now <span class="-icon arrow"><i class="right-arrow-icon"></i></span></button>
             </form>
             <div class="ctas-container">
-                <a href="!#" class="ao">Can't login?</a>
+                <router-link :to="{name: 'forgot-password'}" class="ao">Can't login?</router-link>
                 <p class="atr"> Don’t have an account? <router-link :to="{ name: 'register' }">Signup</router-link></p>
             </div>
         </div>
