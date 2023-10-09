@@ -100,9 +100,9 @@ const isDigitsFull = function () {
             outline: 2px solid #02B8CF;
         }
 
-        &:not([value='']) {
-            outline: 2px solid #02B8CF;
-        }
+        // &:not([value='']) {
+        //     outline: 2px solid #02B8CF;
+        // }
     }
 }
 

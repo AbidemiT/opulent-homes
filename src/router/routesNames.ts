@@ -4,6 +4,7 @@ export interface IRoutesNames {
     register: string;
     forgotPassword: string;
     verifyOtp: string;
+    resetPassword: string;
 }
 
 const routesNames: Readonly<IRoutesNames> = {
@@ -12,6 +13,7 @@ const routesNames: Readonly<IRoutesNames> = {
     register: "register",
     forgotPassword: "forgot-password",
     verifyOtp: "verify-otp",
+    resetPassword: "reset-password",
 }
 
 declare module '@vue/runtime-core' {

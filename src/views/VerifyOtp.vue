@@ -30,10 +30,15 @@
 import AppOtp from "@/components/AppOtp.vue"
 import { ref } from 'vue';
 
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
 const otpValue = ref('');
 
 const handleSubmit = () => {
     console.log(otpValue);
+    router.push({name: 'reset-password'});
 };
 
 

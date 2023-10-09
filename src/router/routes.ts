@@ -33,6 +33,14 @@ export const Routes: RouteRecordRaw[] = [
         }
     },
     {
+        path: "/password-reset",
+        name: RoutesNames.resetPassword,
+        component: () => import(/*chunkName: "password-reset" */ "@/views/ResetPassword.vue"),
+        meta: {
+            anonymousOnly: true
+        }
+    },
+    {
         path: "/verify-otp",
         name: RoutesNames.verifyOtp,
         component: () => import(/*chunkName: "verify-otp" */ "@/views/VerifyOtp.vue"),
