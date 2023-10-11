@@ -10,14 +10,14 @@
                 <div class="input-group">
                     <label for="password">Password</label>
                     <div class="input-container" :class="errors.password ? 'error' : ''">
-                        <input autocomplete="off" type="password" placeholder="Type here" v-bind="password">
+                        <input autocomplete="off" type="password" placeholder="New Password" v-bind="password">
                     </div>
                     <small v-if="errors.password">{{ errors.password }}</small>
                 </div>
                 <div class="input-group">
                     <label for="password">Confirm Password</label>
                     <div class="input-container" :class="errors.confirmPassword ? 'error' : ''">
-                        <input autocomplete="off" type="password" placeholder="Type here" id="confirmPassword"
+                        <input autocomplete="off" type="password" placeholder="Confirm New Password" id="confirmPassword"
                             v-bind="confirmPassword">
                     </div>
                     <small v-if="errors.confirmPassword">{{ errors.confirmPassword }}</small>

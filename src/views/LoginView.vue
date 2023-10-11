@@ -31,10 +31,12 @@
                     <small v-if="errors.password">{{ errors.password }}</small>
                 </div>
 
-                <button class="btn atgd fw-700">Login Now <span class="-icon arrow"><i class="right-arrow-icon"></i></span></button>
+                <button v-if="!loading" class="btn atgd fw-700">Login Now <span class="-icon arrow"><i
+                            class="right-arrow-icon"></i></span></button>
+                <button v-else class="btn atgd fw-700"><app-spinner/></button>
             </form>
             <div class="ctas-container">
-                <router-link :to="{name: 'forgot-password'}" class="ao">Can't login?</router-link>
+                <router-link :to="{ name: 'forgot-password' }" class="ao">Can't login?</router-link>
                 <p class="atr"> Don’t have an account? <router-link :to="{ name: 'register' }">Signup</router-link></p>
             </div>
         </div>
@@ -42,9 +44,14 @@
 </template>
 
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
 import { ref } from 'vue';
 import { useForm } from 'vee-validate';
 import * as yup from 'yup';
+
+import AppSpinner from "@/components/AppSpinner.vue";
+
+import useAppToast from "@/composables/toast";
 
 const { errors, handleSubmit, defineInputBinds } = useForm({
     validationSchema: yup.object({
@@ -53,6 +60,9 @@ const { errors, handleSubmit, defineInputBinds } = useForm({
     }),
 });
 
+const router = useRouter();
+
+const loading = ref(false);
 const passwordVisibility = ref(false);
 const email = defineInputBinds('email');
 const password = defineInputBinds('password');
@@ -65,6 +75,15 @@ function setPasswordVisibility() {
 // It validate all fields and doesn't call your function unless all fields are valid
 const onSubmit = handleSubmit(values => {
     console.log(JSON.stringify(values, null, 2));
+    loading.value = true;
+
+    setTimeout(() => { 
+        loading.value = false;
+        router.push({ name: 'dashboard' });
+        useAppToast().success("Successfully Logged In", {
+            position: 'top-right'
+        })
+    }, 3000);
 });
 
 
