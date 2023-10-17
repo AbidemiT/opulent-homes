@@ -1,7 +1,7 @@
 .-icon,
 .svg-icon {
-    width: 19px;
-    height: 19px;
+    width: 22px;
+    height: 22px;
     display: block;
     margin: 0;
     cursor: pointer;
@@ -33,3 +33,65 @@
     background-image: url("@/assets/svgs/right-arrow.svg");
     color: inherit;
 }
+
+.notification-active {
+    background-image: url("@/assets/svgs/notification-active.svg");
+    color: inherit;
+}
+
+.down-arrow {
+    background-image: url("@/assets/svgs/down-arrow.svg");
+    color: inherit;
+}
+
+.dashboard {
+    background-image: url("@/assets/svgs/dashboard.svg");
+}
+.assets {
+    background-image: url("@/assets/svgs/assets.svg");
+}
+.mortgage {
+    background-image: url("@/assets/svgs/mortgage.svg");
+}
+.savings {
+    background-image: url("@/assets/svgs/savings.svg");
+}
+.marketplace {
+    background-image: url("@/assets/svgs/marketplace.svg");
+}
+.profile {
+    background-image: url("@/assets/svgs/profile.svg");
+}
+.logout {
+    background-image: url("@/assets/svgs/logout.svg");
+}
+
+.action-savings,.action-withdrawal {
+    background-image: url("@/assets/svgs/action-savings.svg");
+}
+.action-money {
+    background-image: url("@/assets/svgs/action-money.svg");
+}
+.action-invest {
+    background-image: url("@/assets/svgs/action-invest.svg");
+}
+.action-mortgage {
+    background-image: url("@/assets/svgs/action-mortgage.svg");
+}
+
+.action-payout {
+    background-image: url("@/assets/svgs/payout.svg");
+}
+
+.location {
+    background-image: url("@/assets/svgs/location.svg");
+}
+.heart {
+    background-image: url("@/assets/svgs/heart.svg");
+}
+.active-heart {
+    background-image: url("@/assets/svgs/active-heart.svg");
+}
+
+
+

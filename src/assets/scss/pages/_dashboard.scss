@@ -1,0 +1,91 @@
+.dashboard__wrapper{
+    width: 1116px;
+    small {
+        font-size: 0.9375em;
+        font-weight: 500;
+    }
+
+    .welcome {
+        border-radius: 15px;
+        background: $color-white;
+        padding: 15px 24px;
+
+        .sm-profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 27px;
+            column-gap: 12px;
+
+            .profile--img__container {
+                width: 46px;
+                height: 46px;
+                border-radius: 50%;
+            }
+        }
+
+        .overview__cards {
+            margin-top: 25px;
+            display: flex;
+            column-gap: 12px;
+            // justify-content: space-between;
+        }
+    }
+    .action__cards {
+        margin-top: 11px;
+        display: flex;
+        column-gap: 44px;
+    }
+
+    .charts__container {
+        display: grid;
+        grid-template-columns: 715px 371px;
+        column-gap: 27px;
+        align-items: center;
+        margin-top: 14px;
+        margin-bottom: 30px;
+
+        .graph,
+        .doughnut {
+            border-radius: 15px;
+            background: #fff;
+            padding: 13px 32px;
+        }
+
+        .graph {
+            .line-chart__wrapper {
+                height: auto;
+
+               div {
+                canvas#line-chart {
+                    width: 504px !important;
+                    height: 296px !important;
+                }
+               }
+            }
+        }
+
+        .doughnut {
+            height: 100%;
+            display: flex;
+            align-items: center;
+
+            .doughnut-chart__wrapper {
+
+                text-align: center;
+                small {
+                    font-size: .875em;
+                    color: #9699AE;
+                    display: inline-block;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+
+    .assets__transactions {
+        display: grid;
+        grid-template-columns: 715px 378px;
+        column-gap: 23px;
+        margin-top: 100px;
+    }
+}

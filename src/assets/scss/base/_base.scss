@@ -86,3 +86,10 @@ input {
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
+
+.v-toast__item--success {
+    background-color: $color-abode-teal-light !important;
+}
+.v-toast__item--error {
+    background-color: $color-abode-orange !important;
+}

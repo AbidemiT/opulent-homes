@@ -1,18 +1,34 @@
 export interface IRoutesNames {
-    landing: string,
+    auth: string;
     login: string;
     register: string;
+    forgotPassword: string;
+    verifyOtp: string;
+    resetPassword: string;
+    dashboardIndex: string;
+    userProfile: string;
+    Assets: string;
+    Mortgage: string;
+    Savings: string;
+    Marketplace: string;
 }
 
 const routesNames: Readonly<IRoutesNames> = {
-    landing: "landing",
+    auth: "auth",
     login: "login",
-    register: "register"
+    register: "register",
+    forgotPassword: "forgot-password",
+    verifyOtp: "verify-otp",
+    resetPassword: "reset-password",
+    dashboardIndex: "dashboard",
+    userProfile: "profile",
+    Assets: "assets",
+    Mortgage: "mortgage",
+    Savings: "savings",
+    Marketplace: "marketplace",
 }
 
 declare module '@vue/runtime-core' {
-    // eslint-disable-next-line @typescript-eslint/interface-name-prefix
-
     interface Vue {
         $routesNames: IRoutesNames
     }
