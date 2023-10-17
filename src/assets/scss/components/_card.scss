@@ -1,0 +1,102 @@
+.overview__card {
+    width: 347px;
+    height: 77px;
+    border-radius: 8px;
+    background: #f3f6fa;
+    padding: 10px 21px;
+
+    .top {
+        margin-bottom: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        span {
+            font-size: 0.8125em;
+            color: #899cae;
+            font-weight: 500;
+        }
+    }
+
+    h4 {
+        font-size: 1.42em;
+        color: #40576f;
+        font-weight: 700;
+    }
+
+    &.blue {
+        background: #ECF4FF;
+    }
+
+    &.cream {
+        background: #FAF9F3; 
+    }
+
+    &.purple {
+        background: #F2F0FF;
+
+        .top {
+            span {
+                color: #7263CE;
+            }
+        }
+        
+        h4 {
+            color: #4939B1;
+        }
+    }
+
+    &:hover {
+        border: 1px solid #69c2ce;
+        background: #ecfdff;
+
+        .top {
+            span {
+                color: #69999e;
+            }
+        }
+
+        h4 {
+            color: #238692;
+        }
+    }
+}
+
+.action__card {
+    width: 246px;
+    height: 80px;
+    border-radius: 15px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    padding: 17px 18px;
+
+    .icon__container {
+        width: 70px;
+        height: 46px;
+        background-color: #ECFDFF;
+        border-radius: 4.88px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .-icon {
+            width: 17px;
+            height: 14px;
+        }
+    }
+
+    .ac-content {
+        h5 {
+            font-size: 0.875em;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        p {
+            font-size: 0.8125em;
+            color: #7C859E;
+        }
+    }
+}

@@ -12,6 +12,7 @@
           </div>
         </div>
         <div class="right">
+          <app-currencies/>
           <span class="-icon"><i class="notification-active"></i></span>
           <AvatarRoot class="avatar__root">
             <AvatarImage class="avatar__img"
@@ -35,6 +36,7 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
 import { AvatarFallback, AvatarImage, AvatarRoot } from 'radix-vue';
+import AppCurrencies from '@/components/AppCurrencies.vue';
 import { ref } from 'vue';
 
 const router = useRouter();
@@ -42,6 +44,8 @@ const currentRoute = ref<string>('Dashboard');
 
 // Use the router's navigation guard to track route changes
 router.beforeEach((to, from, next) => {
+
+  // Todo: Influence this dynamically
   
   if (to.name === 'dashboard') {
     currentRoute.value = "Dashboard";
@@ -60,6 +64,7 @@ router.beforeEach((to, from, next) => {
   } else {
     currentRoute.value = "Profile"
   }
+  
   next();
 });
 

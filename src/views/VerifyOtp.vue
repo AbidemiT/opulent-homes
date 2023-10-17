@@ -17,6 +17,7 @@
                 <small>{{ otpValue }}</small>
 
                 <div class="ctas">
+                    Did not receive OTP?
                     <a href="!#" class="resend">Resend</a>
                 </div>
 
@@ -44,13 +45,14 @@ const handleSubmit = () => {
 
 </script>
 
-<style>
+<style lang="scss" scoped>
 .ctas {
-    text-align: right;
+    text-align: center;
+    margin-top: 22px;
 
     .resend {
         font-size: .88em;
-        color:#515251;
+        color:#F26B35;
     }
 }
 </style>

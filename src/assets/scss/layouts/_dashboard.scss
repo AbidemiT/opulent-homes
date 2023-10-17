@@ -10,6 +10,8 @@
     .dashboard__sidebar {
         background-color: $color-abode-teal-grey;
         width: calc(1444px - 1168px);
+        overflow-y: scroll;
+        // overflow: hidden;
         
         .logo-container {
             width: 117px;
@@ -59,6 +61,8 @@
     .dashboard__content {
         width: calc(100vw - 276px);
         color: $color-dark;
+        overflow-y: scroll;
+        padding-bottom: 40px;
 
         .top__header {
             background-color: $color-white;
@@ -133,10 +137,9 @@
         }
 
         .content {
-            margin-top: 98px;
-            width: 1116px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-top: 30px;
+            padding-left: 23px;
+            padding-right: 23px;
         }
     }
 }
