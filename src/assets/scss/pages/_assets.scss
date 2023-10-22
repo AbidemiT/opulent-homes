@@ -1,3 +1,6 @@
-.assets__tabs {
-    
+.asset_cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
+    row-gap: 45px;
 }

@@ -65,6 +65,12 @@
 .logout {
     background-image: url("@/assets/svgs/logout.svg");
 }
+.search {
+    background-image: url("@/assets/svgs/search.svg");
+}
+.three-dots {
+    background-image: url("@/assets/svgs/three-dots.svg");
+}
 
 .action-savings,.action-withdrawal {
     background-image: url("@/assets/svgs/action-savings.svg");
@@ -85,6 +91,9 @@
 
 .location {
     background-image: url("@/assets/svgs/location.svg");
+}
+.action-withdraw {
+    background-image: url("@/assets/svgs/withdraw.svg");
 }
 .heart {
     background-image: url("@/assets/svgs/heart.svg");

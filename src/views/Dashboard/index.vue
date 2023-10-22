@@ -12,7 +12,7 @@
             <div class="overview__cards">
                 <overview-card title="Wallet Ballance" :amount="350000" :accounts-count="5" />
                 <overview-card title="Net Worth" :amount="0" />
-                <overview-card title="Total Asset Value" :amount="0" />
+                <overview-card title="Subscriptions" :subscription="12" />
             </div>
         </div>
         <div class="charts__container">
@@ -23,8 +23,8 @@
         <div class="action__cards">
             <action-card title="Start Saving" type="savings" description="Build your wealth" />
             <action-card title="Add Money" type="money" description="Fund your account" />
-            <action-card title="Invest" type="invest" description="Group investment" />
-            <action-card title="Get Mortgaged" type="mortgage" description="Manage mortgage" />
+            <action-card title="Invest" type="invest" description="Buy assets with others" />
+            <action-card title="Withdraw" type="withdraw" description="Make withdrawal" />
         </div>
         <div class="assets__transactions">
             <available-assets/>
