@@ -83,6 +83,14 @@ export const Routes: RouteRecordRaw[] = [
           }
       },
       {
+        path: '/dashboard/assets/:id',
+        name: RoutesNames.assetDetails,
+        component: () => import(/*chunkName: "unique id" */ '@/views/Dashboard/Assets/_id/index.vue'),
+        meta: {
+            requiresAuth: true
+          }
+      },
+      {
         path: '/dashboard/mortgage',
         name: RoutesNames.Mortgage,
         component: () => import(/*chunkName: "mortgage" */ '@/views/Dashboard/Mortgage/index.vue'),

@@ -165,7 +165,10 @@
                     </form>
                 </TabsContent>
                 <TabsContent class="tabs-content" value="V">
-                    Verification
+                    <div class="verication__wrapper">
+                        <!-- <verification/> -->
+                        <h1>KYC Integration</h1>
+                    </div>
                 </TabsContent>
             </TabsRoot>
         </div>
@@ -176,6 +179,7 @@
 import { ref } from 'vue';
 import { TabsContent, TabsList, TabsRoot, TabsTrigger } from 'radix-vue'
 import AppProgress from '@/components/AppProgress.vue';
+import Verification from "./components/Verification.vue";
 
 import { useForm } from 'vee-validate';
 import * as yup from 'yup';

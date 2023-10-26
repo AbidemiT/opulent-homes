@@ -11,6 +11,7 @@ export interface IRoutesNames {
     Mortgage: string;
     Savings: string;
     Marketplace: string;
+    assetDetails: string;
 }
 
 const routesNames: Readonly<IRoutesNames> = {
@@ -26,6 +27,7 @@ const routesNames: Readonly<IRoutesNames> = {
     Mortgage: "mortgage",
     Savings: "savings",
     Marketplace: "marketplace",
+    assetDetails: "asset-details",
 }
 
 declare module '@vue/runtime-core' {

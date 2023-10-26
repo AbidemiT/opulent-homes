@@ -22,7 +22,7 @@
                     <p class="mt-0 mb-2">Duration: <span class="text-teal">{{ duration }} weeks</span></p>
                     <h5 class="font-bold">Unit Cost: <span class="text-teal">{{ unitCost }}</span></h5>
                 </div>
-                <button class="bg-orange py-3 px-5 text-white rounded-md">See More</button>
+                <router-link :to="{name: 'asset-details', params: {id: `${title?.replace(' ', '-')}`}}" class="bg-orange py-3 px-5 text-white rounded-md" >See More</router-link>
             </div>
         </div>
     </div>
