@@ -20,6 +20,9 @@ defineProps({
     padding: 2px 8px;
     text-align: center;
     height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     font-size: 0.6875em;
     color: #2A5F7E;
