@@ -15,8 +15,14 @@ defineProps({
 
 <style lang="scss" scoped>
 .app-tag__wrapper {
+    max-width: 100px;
     border-radius: 100px;
     padding: 2px 8px;
+    text-align: center;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     font-size: 0.6875em;
     color: #2A5F7E;
@@ -31,6 +37,7 @@ defineProps({
 
     &.danger {
         background: linear-gradient(113deg, #FF8F63 14.71%, #F26B35 100.23%);
+        color: #fff;
     }
 }
 </style>

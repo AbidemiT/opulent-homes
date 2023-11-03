@@ -53,6 +53,9 @@ router.beforeEach((to, from, next) => {
   else if (to.name === 'assets') {
     currentRoute.value = "My Assets"
   }
+  else if (to.name === "asset-details") {
+    currentRoute.value = "Asset Details"
+  }
   else if (to.name === 'mortgage') {
     currentRoute.value = "Mortgage"
   }

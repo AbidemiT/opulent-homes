@@ -5,12 +5,20 @@
     margin-top: 36px;
 
     &.atgd {
-        background: linear-gradient(113deg, #63C7D3 14.71%, $color-abode-teal-light 100.23%);
+        background: linear-gradient(113deg, #63c7d3 14.71%, $color-abode-teal-light 100.23%);
         color: $color-white;
 
         &:hover {
             background: linear-gradient(113deg, $color-abode-teal-light 14.71%, $color-abode-teal-light 100.23%);
         }
+    }
+    &.orange {
+        border-radius: 6px;
+        background: linear-gradient(113deg, $color-abode-orange 14.71%, $color-abode-orange 100.23%);
+        color: $color-white;
 
+        &:hover {
+            background: linear-gradient(113deg, $color-abode-orange 14.71%, $color-abode-orange 100.23%);
+        }
     }
 }
