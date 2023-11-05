@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
     <div class="assets__wrapper">
-        <div class="assets">
+        <!-- <div class="assets">
             <h3>Asset Financial Overview</h3>
 
             <div class="financial__overview">
@@ -19,25 +19,61 @@
                     <LineChart v-bind="lineChartProps" />
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="assets__tabs">
-            <TabsRoot default-value="PA">
+            <TabsRoot default-value="AO">
                 <TabsList class="tabs-list">
-                    <TabsTrigger class="tabs-trigger" value="PA">Purchased Assets</TabsTrigger>
+                    <TabsTrigger class="tabs-trigger" value="AO">All Offers</TabsTrigger>
+                    <TabsTrigger class="tabs-trigger" value="MA">My Assets</TabsTrigger>
                     <TabsTrigger class="tabs-trigger" value="PI">Pending Installments</TabsTrigger>
                     <TabsTrigger class="tabs-trigger" value="SA">Saved Assets</TabsTrigger>
                 </TabsList>
-                <TabsContent class="tabs-content" value="PA">
+                <div class="search__wrapper">
+                    <div class="search-container">
+                        <input type="search" name="search" id="search" placeholder="Search by name or location">
+                        <span class="-icon"><i class="search"></i></span>
+                    </div>
+                </div>
+                <TabsContent class="tabs-content" value="AO">
                     <div class="asset_cards">
-                        <template v-for="({ title, duration, location, assetYield, unitCost }, i) in availableAssets"
+                        <template
+                            v-for="({ title, duration, location, assetReturn, unitCost, assetType, size }, i) in availableAssets"
                             :key="i">
-                            <asset-card :title="title" :duration="duration" :location="location" :asset-yield="assetYield"
-                                :unit-cost="unitCost" />
+                            <asset-card :title="title" :duration="duration" :location="location" :asset-return="assetReturn"
+                                :asset-type="assetType" :size="size" :unit-cost="unitCost" />
                         </template>
                     </div>
                 </TabsContent>
-                <TabsContent class="tabs-content" value="PI">We are here</TabsContent>
-                <TabsContent class="tabs-content" value="SA">Nice Outing</TabsContent>
+                <TabsContent class="tabs-content" value="MA">
+                    <div class="asset_cards">
+                        <template
+                            v-for="({ title, duration, location, assetReturn, unitCost, assetType, size }, i) in availableAssets"
+                            :key="i">
+                            <asset-card :title="title" :duration="duration" :location="location" :asset-return="assetReturn"
+                                :asset-type="assetType" :size="size" :unit-cost="unitCost" />
+                        </template>
+                    </div>
+                </TabsContent>
+                <TabsContent class="tabs-content" value="PI">
+                    <div class="asset_cards">
+                        <template
+                            v-for="({ title, duration, location, assetReturn, unitCost, assetType, size }, i) in pendingInstallment"
+                            :key="i">
+                            <asset-card :title="title" :duration="duration" :location="location" :asset-return="assetReturn"
+                                :asset-type="assetType" :size="size" :unit-cost="unitCost" />
+                        </template>
+                    </div>
+                </TabsContent>
+                <TabsContent class="tabs-content" value="SA">
+                    <div class="asset_cards">
+                        <template
+                            v-for="({ title, duration, location, assetReturn, unitCost, saved, assetType, size }, i) in savedAssets"
+                            :key="i">
+                            <asset-card :title="title" :duration="duration" :location="location" :asset-return="assetReturn"
+                                :asset-type="assetType" :size="size" :unit-cost="unitCost" :saved="saved" />
+                        </template>
+                    </div>
+                </TabsContent>
             </TabsRoot>
         </div>
     </div>
@@ -106,66 +142,111 @@ const transactions = [
         type: 'withdrawal'
     }
 ]
+const savedAssets = [
+    {
+        title: "Amberville Project",
+        duration: "36",
+        location: "Epe Lagos Nigeria",
+        assetReturn: "2",
+        unitCost: "$600k",
+        saved: true,
+        size: '600 sqm',
+        assetType: "Vacant Land"
+    },
+    {
+        title: "Lamborghini New Model",
+        duration: "36",
+        location: "Vancouver, Canada",
+        assetReturn: "2",
+        unitCost: "$600k",
+        saved: true,
+        size: '600 sqm',
+        assetType: "Fresh"
+    }
+]
+const pendingInstallment = [
+    {
+        title: "Amberville Project",
+        duration: "36",
+        location: "Epe Lagos Nigeria",
+        assetReturn: "2",
+        unitCost: "$600k",
+        size: '600 sqm',
+        assetType: "Vacant Land"
+    },
+    {
+        title: "Lamborghini New Model",
+        duration: "36",
+        location: "Vancouver, Canada",
+        assetReturn: "2",
+        unitCost: "$600k",
+        size: '600 sqm',
+        assetType: "Fresh"
+    },
+    {
+        title: "Amberville Project",
+        duration: "36",
+        location: "Epe Lagos Nigeria",
+        assetReturn: "2",
+        unitCost: "$600k",
+        size: '600 sqm',
+        assetType: "Vacant Land"
+    },
+    {
+        title: "Amberville 2",
+        duration: "36",
+        location: "Epe Lagos Nigeria",
+        assetReturn: "2",
+        unitCost: "$600k",
+        size: '600 sqm',
+        assetType: "Vacant Land"
+
+    },
+]
 const availableAssets = [
     {
-        title: "Amberville Project Ekpe. Lagos NG",
-        duration: "36 weeks",
-        location: "Lagos Nigeria",
-        assetYield: " $2% /annum",
-        unitCost: "$600k"
+        title: "Amberville Project Ekpe",
+        duration: "36",
+        location: "Epe, Lagos State",
+        assetReturn: "2",
+        unitCost: "$600k",
+        size: '600 sqm',
+        assetType: "Vacant Land"
 
-},
+    },
     {
-        title: "Lamborghini New Model, Fresh",
-        duration: "36 weeks",
+        title: "Lamborghini New Model",
+        duration: "36",
         location: "Vancouver, Canada",
-        assetYield: " $2% /annum",
-        unitCost: "$600k"
+        assetReturn: "2",
+        unitCost: "$600k",
+        assetType: "Fresh"
 
-},
+    },
     {
-        title: "45,000 SQM Land, Lekki Lagos, NG.",
-        duration: "36 weeks",
-        location: "Lagos Nigeria",
-        assetYield: " $2% /annum",
-        unitCost: "$600k"
+        title: "Amberville 2",
+        duration: "36",
+        location: "Epe, Lagos State",
+        assetReturn: "2",
+        unitCost: "$600k",
+        size: '40sqm plus land',
+        assetType: "Vacant Land"
 
-},
+    },
     {
-        title: "Estate Bulloz - 40SQM Plus Land",
-        duration: "36 weeks",
+        title: "Estate Bulloz",
+        duration: "36",
         location: "Vancouver, Canada",
-        assetYield: " $2% /annum",
-        unitCost: "$600k"
+        assetReturn: "2",
+        unitCost: "$600k",
+        size: " 40SQM Plus Land",
+        assetType: "Vacant Land"
 
-},
-{
-        title: "Lamborghini New Model, Fresh",
-        duration: "36 weeks",
-        location: "Vancouver, Canada",
-        assetYield: " $2% /annum",
-        unitCost: "$600k"
-
-},
+    },
 ];
 </script>
 
 <style scoped lang="scss">
-.tabs-list {
-    border-bottom: 1px solid #D5E1EE;
-    margin-bottom: 30px;
-
-    .tabs-trigger {
-        padding: 9px;
-        font-weight: 500;
-        color: #7C859E;
-
-        &[data-state="active"] {
-            color: #0593A5;
-            border-bottom: 4px solid #0593A5;
-        }
-    }
-}
 
 .assets__wrapper {
     width: 1116px;
@@ -209,4 +290,5 @@ const availableAssets = [
             }
         }
     }
-}</style>
+}
+</style>

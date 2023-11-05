@@ -1,12 +1,11 @@
 <template>
     <div class="available__assets">
         <div class="top">
-            <h3>My Assets</h3>
-            <router-link :to="{ name: 'assets' }">Find Assets</router-link>
+            <h3 class="font-bold">Available Assets</h3>
         </div>
         <div class="asset_cards">
-            <template v-for="({title, duration, location, assetYield, unitCost}, i) in availableAssets" :key="i">
-                <asset-card :title="title" :duration="duration" :location="location" :asset-yield="assetYield" :unit-cost="unitCost"/>
+            <template v-for="({title, duration, location, assetReturn, unitCost, size, assetType}, i) in availableAssets" :key="i">
+                <asset-card :title="title" :duration="duration" :location="location" :asset-return="assetReturn" :unit-cost="unitCost" :size="size" :asset-type="assetType"/>
             </template>
         </div>
     </div>
@@ -17,35 +16,42 @@ import AssetCard from "../../../components/cards/AssetCard.vue";
 
 const availableAssets = [
     {
-        title: "Amberville Project Ekpe. Lagos NG",
-        duration: "36 weeks",
-        location: "Lagos Nigeria",
-        assetYield: " $2% /annum",
-        unitCost: "$600k"
+        title: "Amberville Project Ekpe",
+        duration: "36",
+        location: "Epe, Lagos State",
+        assetReturn: "2",
+        unitCost: "$600k",
+        size: '600 sqm',
+        assetType: "Vacant Land"
 
 },
     {
-        title: "Lamborghini New Model, Fresh",
-        duration: "36 weeks",
+        title: "Lamborghini New Model",
+        duration: "36",
         location: "Vancouver, Canada",
-        assetYield: " $2% /annum",
-        unitCost: "$600k"
+        assetReturn: "2",
+        unitCost: "$600k",
+        assetType: "Fresh"
 
 },
     {
-        title: "45,000 SQM Land, Lekki Lagos, NG.",
-        duration: "36 weeks",
-        location: "Lagos Nigeria",
-        assetYield: " $2% /annum",
-        unitCost: "$600k"
+        title: "Amberville 2",
+        duration: "36",
+        location: "Epe, Lagos State",
+        assetReturn: "2",
+        unitCost: "$600k",
+        size: '40sqm plus land',
+        assetType: "Vacant Land"
 
 },
     {
-        title: "Estate Bulloz - 40SQM Plus Land",
-        duration: "36 weeks",
+        title: "Estate Bulloz",
+        duration: "36",
         location: "Vancouver, Canada",
-        assetYield: " $2% /annum",
-        unitCost: "$600k"
+        assetReturn: "2",
+        unitCost: "$600k",
+        size: " 40SQM Plus Land",
+        assetType: "Vacant Land"
 
 },
 ];
@@ -55,7 +61,7 @@ const availableAssets = [
 .available__assets {
     border-radius: 15px;
     background: #FFF;
-    padding: 29px;
+    padding: 16px;
 
     .top {
         display: flex;
@@ -71,8 +77,8 @@ const availableAssets = [
     .asset_cards {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        row-gap:29px;
-        column-gap: 29px;
+        row-gap:35px;
+        column-gap: 15px;
     }
 }
 </style>
