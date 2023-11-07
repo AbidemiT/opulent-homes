@@ -74,11 +74,11 @@ const { lineChartProps, lineChartRef } = useLineChart({
 
     .tabs-list {
         color: #7C859E;
-
+        margin-bottom: 0;
         .tabs-trigger {
             font-size: 0.875em;
             padding: 6px 11px;
-
+            margin-right: 10px;
             &[data-active="true"] {
                 border-radius: 8px;
                 background: #DEE8EE;

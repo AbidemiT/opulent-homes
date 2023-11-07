@@ -1,91 +1,155 @@
-.dashboard__wrapper{
-    width: 1116px;
-    small {
-        font-size: 0.9375em;
-        font-weight: 500;
+.dashboard__wrapper {
+  // width: 1116px;
+  width: 100%;
+  overflow: scroll;
+  height: calc(100vh - 90px);
+  padding-bottom: 3em;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  small {
+    font-size: 0.9375em;
+    font-weight: 500;
+  }
+
+  .action__cards {
+    margin-top: 11px;
+    display: flex;
+    // column-gap: 44px;
+    column-gap: 1%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    > div {
+      width: 24%;
+    }
+  }
+
+  .charts__container {
+    display: grid;
+    grid-template-columns: 68% 30%;
+    column-gap: 2%;
+    align-items: center;
+    margin-top: 14px;
+    margin-bottom: 30px;
+
+    .graph,
+    .doughnut {
+      border-radius: 15px;
+      background: #fff;
+      padding: 13px 32px;
+      margin-bottom: 2em;
     }
 
-    .welcome {
-        border-radius: 15px;
-        background: $color-white;
-        padding: 15px 24px;
+    .graph {
+      .line-chart__wrapper {
+        height: auto;
 
-        .sm-profile {
-            display: flex;
-            align-items: center;
-            margin-bottom: 27px;
-            column-gap: 12px;
-
-            .profile--img__container {
-                width: 46px;
-                height: 46px;
-                border-radius: 50%;
-            }
+        div {
+          canvas#line-chart {
+            width: 504px !important;
+            height: 296px !important;
+          }
         }
+      }
+    }
 
-        .overview__cards {
-            margin-top: 25px;
-            display: flex;
-            column-gap: 12px;
-            // justify-content: space-between;
+    .doughnut {
+      height: 100%;
+      max-height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .doughnut-chart__wrapper {
+        text-align: center;
+        small {
+          font-size: 0.875em;
+          color: #9699ae;
+          display: inline-block;
+          margin-bottom: 15px;
         }
+      }
     }
-    .action__cards {
-        margin-top: 11px;
-        display: flex;
-        column-gap: 44px;
-    }
+  }
 
+  .assets__transactions {
+    display: grid;
+    // grid-template-columns: 715px 378px;
+    // column-gap: 23px;
+    grid-template-columns: 68% 30%;
+    column-gap: 2%;
+    margin-top: 50px;
+  }
+}
+
+.welcome {
+  border-radius: 15px;
+  background: $color-white;
+  padding: 15px 24px;
+
+  .sm-profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 27px;
+    column-gap: 12px;
+
+    .profile--img__container {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+    }
+  }
+
+  .overview__cards {
+    margin-top: 25px;
+    display: flex;
+    column-gap: 12px;
+    // justify-content: space-between;
+  }
+}
+
+@media (max-width: 869px) {
+  .dashboard__wrapper {
     .charts__container {
-        display: grid;
-        grid-template-columns: 715px 371px;
-        column-gap: 27px;
-        align-items: center;
-        margin-top: 14px;
-        margin-bottom: 30px;
-
-        .graph,
-        .doughnut {
-            border-radius: 15px;
-            background: #fff;
-            padding: 13px 32px;
-        }
-
-        .graph {
-            .line-chart__wrapper {
-                height: auto;
-
-               div {
-                canvas#line-chart {
-                    width: 504px !important;
-                    height: 296px !important;
-                }
-               }
-            }
-        }
-
-        .doughnut {
-            height: 100%;
-            display: flex;
-            align-items: center;
-
-            .doughnut-chart__wrapper {
-
-                text-align: center;
-                small {
-                    font-size: .875em;
-                    color: #9699AE;
-                    display: inline-block;
-                    margin-bottom: 15px;
-                }
-            }
-        }
+      grid-template-columns: 1fr;
+      margin-bottom: 10px;
     }
-
     .assets__transactions {
-        display: grid;
-        grid-template-columns: 715px 378px;
-        column-gap: 23px;
-        margin-top: 100px;
+      grid-template-columns: 1fr;
+      margin-top: 20px;
     }
+
+    .action__cards {
+      flex-wrap: wrap;
+      > div {
+        width: 48.5%;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .available__assets {
+    margin-bottom: 2rem;
+    .top {
+      margin-bottom: 20px;
+    }
+  }
+  .dashboard__wrapper .charts__container .doughnut {
+    height: 100%;
+    max-height: 100%;
+  }
+}
+
+@media (max-width: 590px) {
+  .dashboard__wrapper {
+    .action__cards {
+      flex-wrap: wrap;
+      > div {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .welcome .overview__cards {
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
 }
