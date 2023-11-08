@@ -288,13 +288,6 @@ const availableAssets = [
 
 <style scoped lang="scss">
 .assets__wrapper {
-  width: 100%;
-  height: calc(100vh - 110px);
-  overflow: scroll;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
   .assets__tabs,
   .assets {
     border-radius: 15px;
@@ -340,6 +333,16 @@ const availableAssets = [
     .assets__tabs {
       .asset_cards {
         grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}
+@media (max-width: 590px) {
+  .assets__wrapper {
+    .assets__tabs {
+      padding: 15px;
+      .asset_cards {
+        grid-template-columns: repeat(1, 1fr);
       }
     }
   }

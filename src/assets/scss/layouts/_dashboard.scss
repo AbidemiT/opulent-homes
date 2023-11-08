@@ -187,7 +187,15 @@
   }
 }
 
-@media (max-width: 560px) {
+.assets__wrapper {
+  width: 100%;
+  height: calc(100vh - 110px);
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+@media (max-width: 590px) {
   .dashboard__layout__wrapper {
     .dashboard__sidebar {
       min-width: 65px;
@@ -202,6 +210,7 @@
         max-width: 65px;
         height: 100vh;
         border-radius: 0;
+        z-index: 8;
       }
     }
   }
@@ -226,6 +235,11 @@
   }
   .last-login {
     display: none;
+  }
+
+  .dashboard__layout__wrapper .dashboard__content .content {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 
