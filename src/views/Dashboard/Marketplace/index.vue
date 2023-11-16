@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-    <div class="marketplace__wrapper">
+    <div class="dashboard__wrapper">
         <div class="market-place">
             <div class="top">
                 <h3>Find a preferred assets</h3>

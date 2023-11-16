@@ -18,7 +18,6 @@
         background-size: contain;
         height: 100%;
         display: block;
-
         stroke: inherit;
     }
 
@@ -107,4 +106,14 @@
 }
 
 
+/* Dashboard Account Icons */
 
+.wallet {
+    background-image: url("@/assets/svgs/wallet.svg");
+}
+.account-download {
+    background-image: url("@/assets/svgs/account-download.svg");
+}
+.transactions {
+    background-image: url("@/assets/svgs/action-savings.svg");
+}

@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-    <div class="user-profile__wrapper">
+    <div class="dashboard__wrapper">
         <div class="profile__progress w-full bg-abode-white container py-6 px-10 flex items-center">
             <img class="rounded-full h-24 w-24 object-cover"
                 src="https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?&w=128&h=128&dpr=2&q=80" alt="User">

@@ -1,24 +1,46 @@
 .btn {
-    display: inline-block;
-    padding: 21px 140px;
-    border-radius: $border-radius-sm;
-    margin-top: 36px;
+  display: inline-block;
+  padding: 21px 140px;
+  border-radius: $border-radius-sm;
+  margin-top: 36px;
 
-    &.atgd {
-        background: linear-gradient(113deg, #63c7d3 14.71%, $color-abode-teal-light 100.23%);
-        color: $color-white;
+  &.atgd {
+    background: linear-gradient(113deg, #63c7d3 14.71%, $color-abode-teal-light 100.23%);
+    color: $color-white;
 
-        &:hover {
-            background: linear-gradient(113deg, $color-abode-teal-light 14.71%, $color-abode-teal-light 100.23%);
-        }
+    &:hover {
+      background: linear-gradient(
+        113deg,
+        $color-abode-teal-light 14.71%,
+        $color-abode-teal-light 100.23%
+      );
     }
-    &.orange {
-        border-radius: 6px;
-        background: linear-gradient(113deg, $color-abode-orange 14.71%, $color-abode-orange 100.23%);
-        color: $color-white;
+  }
+  &.orange {
+    border-radius: 6px;
+    background: linear-gradient(113deg, $color-abode-orange 14.71%, $color-abode-orange 100.23%);
+    color: $color-white;
 
-        &:hover {
-            background: linear-gradient(113deg, $color-abode-orange 14.71%, $color-abode-orange 100.23%);
-        }
+    &:hover {
+      background: linear-gradient(113deg, $color-abode-orange 14.71%, $color-abode-orange 100.23%);
     }
+  }
+}
+
+.card-btn {
+  padding: 5px 10px;
+  min-width: 80px;
+  font-size: 12px;
+  background-color: $dash-acd-footer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: $color-white;
+  &.right {
+    justify-content: flex-end;
+  }
+  &.no-bg {
+    background-color: transparent;
+  }
 }
