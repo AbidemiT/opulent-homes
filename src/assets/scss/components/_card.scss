@@ -231,6 +231,9 @@
       flex: 1;
       padding: 0 2em;
       z-index: 1;
+      b {
+        font-weight: 900;
+      }
     }
   }
   .ac-footer {
@@ -273,6 +276,9 @@
     background-color: #FFEDE5;
      * {
         color: $dashboard-text
+    }
+    .-icon {
+      background: $color-white;
     }
     @include customCard(url(@/assets/svgs/account-dot-red.svg), #F26B35);
     .ac-footer {
