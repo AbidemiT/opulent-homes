@@ -18,11 +18,17 @@
         </router-link>
       </li>
       <li class="menu__list">
+        <router-link class="menu__link" :to="{ name: 'wallet' }">
+          <span class="-icon"><i class="wallet"></i></span>
+          <span>Wallet</span>
+        </router-link>
+      </li>
+      <!-- <li class="menu__list">
         <router-link class="menu__link" :to="{ name: 'mortgage' }">
           <span class="-icon"><i class="mortgage"></i></span>
           <span>Mortgage</span>
         </router-link>
-      </li>
+      </li> -->
       <li class="menu__list">
         <router-link class="menu__link" :to="{ name: 'savings' }">
           <span class="-icon"><i class="savings"></i></span>
@@ -44,6 +50,12 @@
     </ul>
     <app-divider />
     <ul class="menu">
+      <li class="menu__list">
+        <router-link class="menu__link" :to="{ name: 'referral' }">
+          <span class="-icon"><i class="referral"></i></span>
+          <span>Referral</span>
+        </router-link>
+      </li>
       <li class="menu__list">
         <a class="menu__link" @click.prevent="logout">
           <span class="-icon"><i class="logout"></i></span>
