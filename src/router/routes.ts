@@ -107,6 +107,22 @@ export const Routes: RouteRecordRaw[] = [
           }
       },
       {
+        path: '/dashboard/wallet',
+        name: RoutesNames.wallet,
+        component: () => import(/*chunkName: "wallet" */ '@/views/Dashboard/Wallet/index.vue'),
+        meta: {
+            requiresAuth: true
+          }
+      },
+      {
+        path: '/dashboard/referral',
+        name: RoutesNames.referral,
+        component: () => import(/*chunkName: "referral" */ '@/views/Dashboard/Referral/index.vue'),
+        meta: {
+            requiresAuth: true
+          }
+      },
+      {
         path: '/dashboard/marketplace',
         name: RoutesNames.Marketplace,
         component: () => import(/*chunkName: "marketplace" */ '@/views/Dashboard/Marketplace/index.vue'),
