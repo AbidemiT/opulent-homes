@@ -10,6 +10,7 @@ export interface IRoutesNames {
     Assets: string;
     Mortgage: string;
     Savings: string;
+    AccountDetail: string;
     Marketplace: string;
     assetDetails: string;
     wallet: string;
@@ -28,6 +29,7 @@ const routesNames: Readonly<IRoutesNames> = {
     Assets: "assets",
     Mortgage: "mortgage",
     Savings: "savings",
+    AccountDetail: "account-details",
     Marketplace: "marketplace",
     assetDetails: "asset-details",
     wallet: "wallet",

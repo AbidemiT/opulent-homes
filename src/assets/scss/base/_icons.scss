@@ -120,9 +120,19 @@
 .wallet {
     background-image: url("@/assets/svgs/wallet.svg");
 }
+.wallet-minus {
+    background-image: url("@/assets/svgs/wallet-minus.svg");
+}
+.wallet-add {
+    background-image: url("@/assets/svgs/wallet-add.svg");
+}
 .account-download {
     background-image: url("@/assets/svgs/account-download.svg");
 }
 .transactions {
     background-image: url("@/assets/svgs/action-savings.svg");
+}
+
+.delete {
+    background-image: url("@/assets/svgs/delete.svg");
 }

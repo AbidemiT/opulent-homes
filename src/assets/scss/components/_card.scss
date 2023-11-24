@@ -11,6 +11,7 @@
   &::after {
     content: '';
     position: absolute;
+    z-index: 1;
   }
   &::before {
     background-color: $beforeBg;
@@ -137,7 +138,12 @@
 /* Card Layout */
 .grid-30-70 {
   display: grid;
-  grid-template-columns: 32% 66%;
+  grid-template-columns: 35% 63%;
+  column-gap: 2%;
+}
+.grid-70-30 {
+  display: grid;
+  grid-template-columns: 66% 32%;
   column-gap: 2%;
 }
 
@@ -165,6 +171,9 @@
   &.m300 {
     min-height: 400px;
   }
+}
+.pad-inner {
+  padding: 15px 24px;
 }
 
 .account-card {
@@ -198,6 +207,8 @@
   p {
     font-size: 13px;
     color: rgba(6, 72, 109, 1);
+    padding-left: 5px;
+    display: block;
     strong,
     b {
       font-weight: 500;
@@ -243,6 +254,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 2em;
+    width: 100%;
     p {
       font-size: 14px;
       margin: 0;
@@ -273,16 +285,16 @@
   }
 
   &.has-savings {
-    background-color: #FFEDE5;
-     * {
-        color: $dashboard-text
+    background-color: #ffede5;
+    * {
+      color: $dashboard-text;
     }
     .-icon {
       background: $color-white;
     }
-    @include customCard(url(@/assets/svgs/account-dot-red.svg), #F26B35);
+    @include customCard(url(@/assets/svgs/account-dot-red.svg), #f26b35);
     .ac-footer {
-        display: none;
+      display: none;
     }
   }
 
@@ -349,6 +361,9 @@
 .card-view-title {
   display: flex;
   justify-content: space-between;
+  h2 {
+    margin-bottom: 0 !important;
+  }
 }
 
 .no-infor {
@@ -415,10 +430,31 @@
       margin-left: 8px;
     }
   }
+  .tc-section {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    justify-content: space-between;
+  }
+  .tc-info-view {
+    text-align: center;
+    div {
+      font-size: 9px;
+      text-align: center;
+      display: inline-flex;
+      justify-content: center;
+      background-color: #f3f5f8;
+      font-weight: 700;
+      padding: 3px 5px;
+      border-radius: 3px;
+      text-transform: uppercase;
+    }
+  }
   .tc-main {
     display: flex;
     align-items: center;
     column-gap: 15px;
+
     .-icon {
       width: 70px;
       height: 40px;
@@ -502,6 +538,87 @@
   }
 }
 
+.card.btn-card {
+  background-color: $color-white;
+  border: 1px solid #c9dce8;
+  border-radius: 15px;
+  overflow: hidden;
+  height: 200px;
+  .header {
+    background-color: #f4f7ff;
+    height: 32px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+  }
+  .card-body {
+    padding: 15px 20px 10px;
+  }
+  .-icon {
+    width: 20px;
+    height: 20px;
+    margin: 0 10px 0 0;
+  }
+}
+
+.list-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 5px;
+  .fl-card {
+    height: 95px;
+  }
+}
+
+.pop-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #F1F5F7;
+  p {
+    color: #151616;
+    font-weight: 500;
+  }
+  .-icon {
+    width: 70px;
+    height: 70px;
+  }
+  &.add {
+    background-color: #ECFDFF;
+  }
+  &.minus{
+   background-color: #F1F5F7;
+  }
+}
+.flow-card {
+  background-color: #ECFDFF;
+  p {
+    font-size: 13px;
+    padding-bottom: 5px;
+  }
+  > div {
+    background-color: $color-white;
+    height: 40px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+  }
+}
+
+.balance-card {
+  background-color: #F3F6FA;
+  border: 1px solid #E7E8E7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  h2 {
+    font-weight: bolder;
+    font-size: 2.2em;
+  }
+}
 /* Media Query */
 @media (max-width: 590px) {
   .app_card {
@@ -541,6 +658,14 @@
       border-radius: 10px;
       margin: 15px 0 5px;
     }
+    .tc-section {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .tc-info-view {
+      text-align: left;
+      margin-bottom: 15px;
+    }
     .tc-main {
       flex-direction: column;
       align-items: flex-start;
@@ -564,5 +689,11 @@
   }
   .tc-main-content {
     padding: 1em 0;
+  }
+
+  .balance-card {
+    h2 {
+      font-size: 1.2em;
+    }
   }
 }

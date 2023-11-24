@@ -44,3 +44,30 @@
     background-color: transparent;
   }
 }
+
+.c-btn {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  height: 43px;
+  font-size: 14px;
+  background-color: #ccc;
+  width: 100%;
+  margin-bottom: 5px;
+  border-radius: 6px;
+  &.withdraw {
+    background-color: #FFE0D3;
+    color: #CC4B14;
+    font-weight: 700;
+  }
+  &.add-money {
+    background-color: #E9D9FF;
+    color: #51238D;
+    font-weight: 700;
+  }
+  &.settings {
+    background-color: #D2EFFF;
+    color: #086D79;
+    font-weight: 700;
+  }
+}

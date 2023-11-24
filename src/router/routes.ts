@@ -107,6 +107,14 @@ export const Routes: RouteRecordRaw[] = [
           }
       },
       {
+        path: '/dashboard/savings/:id/details',
+        name: RoutesNames.AccountDetail,
+        component: () => import(/*chunkName: "savings" */ '@/views/Dashboard/Savings/CashAccountDetails/index.vue'),
+        meta: {
+            requiresAuth: true
+          }
+      },
+      {
         path: '/dashboard/wallet',
         name: RoutesNames.wallet,
         component: () => import(/*chunkName: "wallet" */ '@/views/Dashboard/Wallet/index.vue'),

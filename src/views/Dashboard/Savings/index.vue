@@ -4,105 +4,15 @@
     <div class="app_card">
       <h2>Savings Accounts</h2>
       <div class="grid-equal">
-        <SavingsCard />
-        <!-- has-cash, disabled, has-savings -->
-        <div class="account-card cash-account">
-          <div class="ac-header">
-            <span class="-icon"><i class="wallet"></i></span>
-            <h3>Total Transaction</h3>
-          </div>
-          <div>
-            <h2>$0.00</h2>
-            <p>
-              Available balance:
-              <b>$0.00</b>
-            </p>
-          </div>
-          <!-- <div class="note-wrapper">
-            <span class="-icon">
-              <i class="account-download"></i>
-            </span>
-            <p>No Savings Account</p>
-            <p><small>Setup Cash Account First</small></p>
-          </div> -->
-          <div class="ac-footer">
-            <p>Create Savings Account</p>
-            <button class="card-btn no-bg right" to="/dashboard/savings">
-              <i class="-icon"></i>
-            </button>
-          </div>
-        </div>
+        <SavingsCard :savings="userData.savings" :handleClick="handleCashAccount" />
+        <SavingsTransCard :transactions="0" />
       </div>
     </div>
 
-    <div class="app_card">
-      <div class="card-view-title">
-        <h2>Recent Transactions</h2>
-        <button class="card-btn">View More</button>
-      </div>
-      <div class="no-infor">
-        <span class="-icon">
-          <i class="transactions"></i>
-        </span>
-        <h5>No Transactions Yet</h5>
-        <p>Every transaction is shown here</p>
-      </div>
-    </div>
+    <NoTransaction />
 
-    <div class="grid-30-70">
-      <div class="app_card m300">
-        <h2>Savings</h2>
-        <div class="no-infor">
-          <span class="-icon">
-            <i class="transactions"></i>
-          </span>
-          <h5>No Transactions Yet</h5>
-          <p>Every transaction is shown here</p>
-          <button class="card-btn primary-button">
-            <i class="-icon"></i>
-            Add Savings Account
-          </button>
-        </div>
-      </div>
+    <TransNoSavings />
 
-      <div class="app_card">
-        <h2>Recent Transactions</h2>
-        <div class="table-card-list">
-          <div
-            v-for="(item, index) in [
-              { status: 'success' },
-              { status: 'pending' },
-              { status: 'pending' },
-              { status: 'pending' },
-              { status: 'processing' }
-            ]"
-            :key="index"
-            class="table-card"
-          >
-            <div class="tc-main">
-              <div class="img-view">
-                <img src="@/assets/imgs/house.png" />
-              </div>
-              <!-- <span class="-icon">
-                <i class="transactions"></i>
-              </span> -->
-              <div class="tc-main-content">
-                <h4>Assets Purchase</h4>
-                <p>
-                  20 Jun, 2023 | Amount:
-                  <b>$360,000</b>
-                </p>
-              </div>
-            </div>
-            <div class="tc-info">
-              <!-- success, pending, processing -->
-              <span class="tag success" :class="item.status">{{ item.status }}</span>
-              <p>Ref: TRX9735374u6476</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="grid-30-70">
       <div class="app_card m300">
         <h2>Savings</h2>
@@ -167,4 +77,18 @@
 <script lang="ts" setup>
 // import type SavingsCard from '@/components/cards/SavingsCard.vue';
 import SavingsCard from '@/components/SavingsCard.vue'
+import SavingsTransCard from '@/components/SavingsTransCard.vue'
+import NoTransaction from '@/components/nodata/NoTransaction.vue'
+import TransNoSavings from '@/components/nodata/TransNoSavings.vue'
+import { ref } from 'vue'
+
+const userData = ref({
+  savings: 0,
+  transactions: 0
+})
+
+/* Functions */
+function handleCashAccount() {
+  console.log('Handle Popup')
+}
 </script>

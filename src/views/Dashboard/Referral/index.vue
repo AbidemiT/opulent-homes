@@ -1,6 +1,12 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-    <div>
-        <h1>Referral</h1>
+  <div class="dashboard__wrapper">
+    <div class="app_card">
+      <div class="custom-layout">
+        <div class="">Hello</div>
+        <div class="">Hello</div>
+        <div class="">Hello</div>
+      </div>
     </div>
+  </div>
 </template>

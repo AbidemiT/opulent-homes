@@ -1,6 +1,6 @@
 <template>
   <!-- has-cash -->
-  <div class="account-card cash-account has-cash">
+  <div class="account-card cash-account" :class="savings ? 'has-cash' : ''">
     <div class="ac-header">
       <span class="-icon"><i class="wallet"></i></span>
       <h3>
@@ -9,26 +9,28 @@
       </h3>
     </div>
     <div>
-      <h2>$0.00</h2>
+      <h2>${{ savings?.toFixed(2) }}</h2>
       <p>
         Available balance:
-        <b>$0.00</b>
+        <b>${{ savings?.toFixed(2) }}</b>
       </p>
     </div>
-    <div class="ac-footer">
-      <p>
-        Bank Details
-        <span>NOT AVAILABLE</span>
-      </p>
-      <button class="card-btn no-bg right" to="/dashboard/savings">
-        <i class="-icon"></i>
-      </button>
+    <div>
+      <div class="ac-footer" v-if="savings === 0">
+        <p>
+          Bank Details
+          <span>NOT AVAILABLE</span>
+        </p>
+        <CashSetupModal />
+      </div>
     </div>
   </div>
 </template>
 <script lang="ts" setup>
+import CashSetupModal from '@/components/CashSetupModal.vue';
 defineProps({
-  data: Object,
+  savings: Number,
+  handleClick: Function
 })
 </script>
 <style lang=""></style>

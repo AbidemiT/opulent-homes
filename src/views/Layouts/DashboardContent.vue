@@ -61,7 +61,12 @@ router.beforeEach((to, from, next) => {
     currentRoute.value = 'Savings'
   } else if (to.name === 'marketplace') {
     currentRoute.value = 'Marketplace'
-  } else {
+  } else if (to.name === 'wallet') {
+    currentRoute.value = 'Wallet'
+  }  else if (to.name === 'referral') {
+    currentRoute.value = 'Referral'
+  } 
+  else {
     currentRoute.value = 'Profile'
   }
 
