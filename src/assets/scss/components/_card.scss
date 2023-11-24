@@ -152,6 +152,12 @@
   grid-template-columns: 49% 49%;
   column-gap: 2%;
 }
+
+.grid-55-45 {
+  display: grid;
+  grid-template-columns: 53% 42%;
+  column-gap: 2%;
+}
 /* Custom Cards */
 .app_card {
   border-radius: 15px;
@@ -159,6 +165,19 @@
   padding: 15px 24px;
   margin-bottom: 25px;
   border-radius: 15px;
+  h1 {
+    font-weight: 700;
+    font-size: 2.3em;
+    margin: 15px 0;
+  }
+  > h3 {
+    font-weight: 700;
+  }
+  > p {
+    font-weight: 300;
+    // font-size: 80%;
+    // padding-right: 10%;
+  }
   > h2,
   > div > h2 {
     font-size: 14px;
@@ -617,6 +636,17 @@
   h2 {
     font-weight: bolder;
     font-size: 2.2em;
+  }
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+  margin: 20px 0;
+  .-icon {
+    width: 30px;
+    height: 30px;
   }
 }
 /* Media Query */

@@ -71,3 +71,19 @@
     font-weight: 700;
   }
 }
+
+.btn-primary {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  width: 100%;
+  // background-color: $dash-abode-color;
+  height: 45px;
+  padding-inline: 20px;
+  background: linear-gradient(113.11deg, #63C7D3 14.71%, #0593A5 100.23%);
+  border-radius: 6px;
+  font-size: 14px;
+  .-icon {
+    margin-right: 10px;
+  }
+}
