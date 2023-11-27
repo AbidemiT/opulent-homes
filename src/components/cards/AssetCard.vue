@@ -12,7 +12,34 @@
         </div>
       </div>
     </div>
-    <div class="ac-content text-teal-dark mb-4">
+    <div class="fin-details" v-if="type">
+      <div>
+        <p>Total Cost: N600k</p>
+        <span>30%</span>
+      </div>
+      <div class="progress">
+        <ProgressRoot
+          v-model="progressValue"
+          class="relative overflow-hidden bg-blackA9 rounded-full w-full sm:w-[300px] h-4 sm:h-2"
+          style="transform: translateZ(0)"
+        >
+          <ProgressIndicator
+            class="bg-mint rounded-full w-full h-full transition-transform duration-[660ms] ease-[cubic-bezier(0.65, 0, 0.35, 1)]"
+            :style="`transform: translateX(-${100 - progressValue}%)`"
+          />
+        </ProgressRoot>
+      </div>
+      <div>
+        <p>Amount Paid: N200k</p>
+        <span>Balance: N400k</span>
+      </div>
+      <div>
+        <p>Next Payment Date:</p>
+        <span>12/11/2024</span>
+      </div>
+      <button class="app-btn orang-btn btn-block">May Payment</button>
+    </div>
+    <div class="ac-content text-teal-dark mb-4" v-else>
       <div class="asset-type__asset-return flex items-center justify-between mb-2">
         <p>{{ assetType }}</p>
         <p class="text-teal">Return: ${{ assetReturn }}%</p>
@@ -40,8 +67,17 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted, ref } from 'vue'
 import AppTag from '../AppTag.vue'
 import AppHeart from '../AppHeart.vue'
+import { ProgressIndicator, ProgressRoot } from 'radix-vue'
+
+const progressValue = ref(10)
+
+onMounted(() => {
+  const timer = setTimeout(() => (progressValue.value = 66), 500)
+  return () => clearTimeout(timer)
+})
 
 defineProps({
   title: String,
@@ -51,7 +87,8 @@ defineProps({
   assetReturn: String,
   saved: Boolean,
   assetType: String,
-  size: String
+  size: String,
+  type: String
 })
 </script>
 
@@ -86,30 +123,27 @@ defineProps({
       right: 10px;
       top: 10px;
     }
+  }
+  .banner {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border-radius: 8px;
+    background: linear-gradient(90deg, rgba(6, 147, 165, 0.9) 23.27%, rgba(6, 147, 165, 0.56) 100%);
+    padding: 9px 14px;
 
-    .banner {
-      width: 100%;
-      position: absolute;
-      bottom: 0;
-      border-radius: 8px;
-      background: linear-gradient(
-        90deg,
-        rgba(6, 147, 165, 0.9) 23.27%,
-        rgba(6, 147, 165, 0.56) 100%
-      );
-      padding: 9px 14px;
+    h4 {
+      font-weight: 700;
+      line-height: normal;
+      font-size: 16px;
+    }
 
-      h4 {
-        font-weight: 700;
+    .location__size {
+      p {
         line-height: normal;
-        font-size: 1.25em;
-      }
-
-      .location__size {
-        p {
-          line-height: normal;
-          margin: 0;
-        }
+        margin: 0;
+        font-size: 14px;
+        font-weight: 300;
       }
     }
   }
@@ -146,6 +180,47 @@ defineProps({
         }
       }
     }
+  }
+}
+
+.fin-details {
+  padding: 10px;
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    &:first-child {
+      > * {
+        font-family: 'Satoshi';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        color: #02b8cf;
+      }
+      > span {
+        text-align: right;
+      }
+    }
+    > * {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 500;
+      color: #0f4c59;
+    }
+    p {
+      width: 50%;
+    }
+    > span {
+      text-align: right;
+      width: 50%;
+    }
+  }
+  button {
+    margin: 20px 0 0;
+  }
+  .progress {
+    margin: 10px 0;
   }
 }
 

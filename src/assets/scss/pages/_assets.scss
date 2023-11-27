@@ -1,6 +1,134 @@
 .asset_cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 30px;
-    row-gap: 45px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+.bg-mint {
+  background-color: #0593a5;
+}
+
+.custom-view {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 45%;
+  height: 50px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 0.3px solid #7c859e;
+  padding: 0 16px;
+  position: relative;
+  .label-view {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+  }
+  &:hover {
+    .drop-view {
+      display: block;
+    }
+  }
+}
+.drop-view {
+  display: none;
+  position: absolute;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  left: 0;
+  bottom: 100%;
+  background-color: #f3f5f8;
+  width: 100%;
+  border-radius: 16px;
+  min-height: 90px;
+  padding: 10px 20px;
+  p {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f4c59;
+  }
+  ul {
+    li {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+      color: #0693a5;
+      font-size: 16px;
+      > span {
+        text-align: left;
+        &:first-child {
+          width: 60%;
+        }
+      }
+    }
+  }
+}
+
+.review-report {
+  display: flex;
+  flex-direction: column;
+  background-color: #EDFCFF;
+  border-radius: 24px;
+  padding: 1em;
+  .wrap-icon {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .-icon {
+    width: 90px;
+    height: 90px;
+    transform: scale(1.6);
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 869px) {
+  .asset_cards {
+    grid-template-columns: 50% 50%;
+  }
+  .custom-view {
+    width: 100%;
+  }
+}
+
+@media (max-width: 590px) {
+  .asset_cards {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+  }
+  .custom-view {
+    flex-direction: column;
+    height: auto;
+    padding: 15px 0 0;
+    .label-view {
+      padding-bottom: 10px;
+      text-align: left;
+      width: 100%;
+      padding: 0 10px 10px;
+    }
+    > .-icon {
+      display: none;
+    }
+    .drop-view {
+      display: block;
+      position: relative;
+      bottom: 0;
+      ul li {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        > span {
+          text-align: left;
+          font-size: 14px;
+          &:last-child {
+            font-weight: bolder;
+            font-size: 16px;
+            color: #0f4c59;
+          }
+        }
+      }
+    }
+  }
 }

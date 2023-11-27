@@ -83,7 +83,7 @@
     <div class="detail-row financials">
       <h3>Financials</h3>
       <div class="breakdown financials">
-        <select name="transactions" id="transactions">
+        <!-- <select name="transactions" id="transactions">
           <option value="transactions">Transactions</option>
           <option value="transactions">Transactions</option>
           <option value="transactions">Transactions</option>
@@ -92,7 +92,39 @@
           <option value="Income Breakdown">Income Breakdown</option>
           <option value="Income Breakdown">Income Breakdown</option>
           <option value="Income Breakdown">Income Breakdown</option>
-        </select>
+        </select> -->
+        <div class="custom-view">
+          <div class="label-view">
+            <span class="-icon"><i class="trans-icon"></i></span>
+            Transactions
+          </div>
+          <span class="-icon"><i class="info-icon"></i></span>
+          <div class="drop-view">
+            <p>Transactions</p>
+            <ul>
+              <li><span>Asset Cost</span><span>N25 million</span></li>
+              <li><span>Set Up Cost</span><span>N5 million</span></li>
+              <li><span>Admin Charge</span><span>N2.5 million</span></li>
+              <li><span>Asset Total Value</span><span>N32.5 million</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="custom-view">
+          <div class="label-view">
+            <span class="-icon"><i class="home-icon"></i></span>
+            Income Breakdown
+          </div>
+          <span class="-icon"><i class="info-icon"></i></span>
+          <div class="drop-view">
+            <p>Rental History</p>
+            <ul>
+              <li><span>Gross Income</span><span>N5 million</span></li>
+              <li><span>Services Charge</span><span>N5 million</span></li>
+              <li><span>Tax</span><span>N5 million</span></li>
+              <li><span>Net Income</span><span>N5 million</span></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
     <div class="invest-button">
@@ -250,6 +282,7 @@
 
 @media (max-width: 590px) {
   .breakdown {
+    padding: 18px 0;
     &.financials {
       select {
         width: 100%;

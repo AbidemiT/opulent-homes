@@ -83,8 +83,89 @@
             <CalculateEarnings />
           </div>
         </div>
+        <div class="details-stat py-7">
+          <div class="carousel__container">
+            <asset-carousel :slides="slides" />
+            <div class="asset-dates flex justify-between">
+              <div class="date">
+                <p>Asset Launch Date</p>
+                <h3>12 Janauary, 2024</h3>
+              </div>
+              <div class="date">
+                <p>Asset Closing Date</p>
+                <h3>12 Janauary, 2024</h3>
+              </div>
+            </div>
+          </div>
+          <div class="asset-funding-progress__container chart-data">
+            <apexchart
+              width="280"
+              type="donut"
+              :options="{
+                legend: false,
+                fill: {
+                  type: 'gradient'
+                },
+                plotOptions: {
+                  pie: {
+                    startAngle: 0,
+                    endAngle: 360,
+                    donut: {
+                      size: '65%',
+                      background: 'transparent',
+                      show: false,
+                      labels: {
+                        show: true,
+                        name: {
+                          show: true,
+                          color: '#7C859E'
+                        },
+                        value: {
+                          show: true,
+                          color: '#9F35F2'
+                        },
+                        total: {
+                          show: true,
+                          label: 'Funded'
+                        }
+                      }
+                    }
+                  }
+                }
+              }"
+              :series="[50]"
+            ></apexchart>
+            <div class="layout-fields mb-[15px]">
+              <div class="input-container">
+                <label for="rent_income">Number of Units</label>
+                <p>3 Months</p>
+              </div>
+              <div class="input-container">
+                <label for="amout">Amount</label>
+                <p>2%</p>
+              </div>
+            </div>
+          </div>
+          <div class="review-report">
+            <div class="wrap-icon">
+              <span class="-icon"><i class="report-icon"></i></span>
+            </div>
+            <button class="app-btn btn-block">View Report</button>
+          </div>
+        </div>
       </div>
+
+      <div class="info-display__wrapper bg-white rounded-2xl">
+        <div class="flex justify-between items-center">
+          <div class="flex">
+            <h3 class="">Asset Financial Overview</h3>
+          </div>
+        </div>
+        <FinancialStat />
+      </div>
+
       <!-- End Stat details -->
+
       <div class="asset-details__tabs__wrapper bg-white rounded-2xl py-9 px-12 mt-2">
         <TabsRoot default-value="details">
           <TabsList class="tabs-list">
@@ -121,6 +202,31 @@
           </TabsContent>
         </TabsRoot>
       </div>
+
+      <div class="asset-details__tabs__wrapper bg-white rounded-2xl py-9 px-12 mt-2">
+        <TabsRoot default-value="availableAsset">
+          <TabsList class="tabs-list">
+            <TabsTrigger class="tabs-trigger" value="availableAsset">Available Assets</TabsTrigger>
+            <TabsTrigger class="tabs-trigger" value="myAsset">My Assets</TabsTrigger>
+            <TabsTrigger class="tabs-trigger" value="pendingInstallments">
+              Pending Installments
+            </TabsTrigger>
+            <TabsTrigger class="tabs-trigger" value="savedAssets">Saved Assets</TabsTrigger>
+          </TabsList>
+          <TabsContent class="tabs-content" value="availableAsset">
+            <AvailableAssets />
+          </TabsContent>
+          <TabsContent class="tabs-content" value="myAsset">
+            <MyAssets />
+          </TabsContent>
+          <TabsContent class="tabs-content" value="pendingInstallments">
+            <SavedAssets />
+          </TabsContent>
+          <TabsContent class="tabs-content" value="savedAssets">
+            <PendingInstallments />
+          </TabsContent>
+        </TabsRoot>
+      </div>
     </div>
   </div>
 </template>
@@ -135,6 +241,11 @@ import FAQs from '../components/FAQs.vue'
 import QuestionForm from '../components/QuestionForm.vue'
 import AssetDetails from '../components/AssetDetails.vue'
 import CalculateEarnings from '../components/CalculateEarnings.vue'
+import AvailableAssets from '@/components/assets/AvailableAssets.vue'
+import MyAssets from '@/components/assets/MyAssets.vue'
+import SavedAssets from '@/components/assets/SavedAssets.vue'
+import PendingInstallments from '@/components/assets/PendingInstallments.vue'
+import FinancialStat from '@/components/assets/FinancialStat.vue'
 
 const router = useRouter()
 
@@ -262,7 +373,17 @@ const slides = [
     }
   }
 }
+
+.info-display__wrapper {
+  padding: 20px;
+}
+
 @media (max-width: 869px) {
+  .details-stat {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
   .asset-details__wrapper {
     .detail-row {
       grid-template-columns: 1fr;

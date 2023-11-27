@@ -128,7 +128,7 @@
 <script lang="ts" setup>
 import { TabsContent, TabsList, TabsRoot, TabsTrigger } from 'radix-vue'
 
-import AssetCard from '../../../components/cards/AssetCard.vue'
+import AssetCard from '@/components/cards/AssetCard.vue'
 import OverviewCard from '@/components/cards/OverviewCard.vue'
 import TransactionCard from '@/components/cards/TransactionCard.vue'
 import { Chart, registerables } from 'chart.js'
