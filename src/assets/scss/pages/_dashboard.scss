@@ -107,7 +107,11 @@
   }
 }
 
-
+.info-display__wrapper {
+  h3 {
+    color: $teal;
+  }
+}
 
 @media (max-width: 869px) {
   .dashboard__wrapper {

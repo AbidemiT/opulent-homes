@@ -158,6 +158,12 @@
   grid-template-columns: 53% 42%;
   column-gap: 2%;
 }
+
+.details-stat {
+  display: grid;
+  grid-template-columns: 38% 25% 33%;
+  column-gap: 2%;
+}
 /* Custom Cards */
 .app_card {
   border-radius: 15px;
@@ -676,6 +682,14 @@
     grid-template-columns: 1fr;
     // row-gap: 2%;
   }
+
+  .details-stat {
+    display: flex;
+    column-gap: 2%;
+    width: 100%;
+    flex-direction: column;
+  }
+
 
   .table-card-list {
     grid-template-rows: repeat(5, auto);

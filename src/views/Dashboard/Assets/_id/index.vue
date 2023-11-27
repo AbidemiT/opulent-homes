@@ -2,20 +2,21 @@
 <template>
   <div class="assets__wrapper">
     <div class="asset__details__wrapper">
-      <div class="info-display__wrapper bg-white rounded-2xl py-9 px-12">
-        <div class="top flex justify-between">
-          <div class="left-content flex justify-between">
-            <h3 class="font-bold text-green-900">{{ idParam }}</h3>
+      <div class="info-display__wrapper bg-white rounded-2xl">
+        <div class="flex justify-between items-center">
+          <div class="flex">
+            <h3 class="">{{ idParam }}</h3>
             <div class="tags flex justify-between gap-2 ml-5">
               <app-tag content="Own To Earn" :bg-color="'success'" />
               <app-tag content="Payment Plan" :bg-color="'danger'" />
             </div>
           </div>
           <div class="right">
-            <button class="bg-orange py-3 px-5 text-white rounded-md">Invest</button>
+            <button class="app-btn orang-btn">Invest</button>
           </div>
         </div>
-        <div class="bottom">
+
+        <div class="details-stat py-7">
           <div class="carousel__container">
             <asset-carousel :slides="slides" />
             <div class="asset-dates flex justify-between">
@@ -29,41 +30,61 @@
               </div>
             </div>
           </div>
-          <div class="asset-funding-progress__container">
-            <!-- <apexchart width="380" type="donut" :options="{
-                        plotOptions: {
-                            pie: {
-                                startAngle: 0,
-                                endAngle: 360,
-                                donut: {
-                                    size: '65%',
-                                    background: 'transparent',
-                                    show: false,
-                                    labels: {
-                                        show: true,
-                                        name: {
-                                            show: true,
-                                            color: '#7C859E'
-                                        },
-                                        value: {
-                                            show: true,
-                                            color: '#9F35F2'
-                                        },
-                                        total: {
-                                            show: true,
-                                            label: 'Funded'
-                                        }
-                                    }
-                                }
-                            }
+          <div class="asset-funding-progress__container chart-data">
+            <apexchart
+              width="280"
+              type="donut"
+              :options="{
+                legend: false,
+                fill: {
+                  type: 'gradient'
+                },
+                plotOptions: {
+                  pie: {
+                    startAngle: 0,
+                    endAngle: 360,
+                    donut: {
+                      size: '65%',
+                      background: 'transparent',
+                      show: false,
+                      labels: {
+                        show: true,
+                        name: {
+                          show: true,
+                          color: '#7C859E'
+                        },
+                        value: {
+                          show: true,
+                          color: '#9F35F2'
+                        },
+                        total: {
+                          show: true,
+                          label: 'Funded'
                         }
-                    }" :series="[50]"></apexchart> -->
+                      }
+                    }
+                  }
+                }
+              }"
+              :series="[50]"
+            ></apexchart>
+            <div class="layout-fields mb-[15px]">
+              <div class="input-container">
+                <label for="rent_income">Number of Units</label>
+                <p>3 Months</p>
+              </div>
+              <div class="input-container">
+                <label for="amout">Amount</label>
+                <p>2%</p>
+              </div>
+            </div>
           </div>
           <div class="calculator__container">
-            <!-- <CalculateEarnings/> -->
+            <CalculateEarnings />
           </div>
         </div>
       </div>
+      <!-- End Stat details -->
       <div class="asset-details__tabs__wrapper bg-white rounded-2xl py-9 px-12 mt-2">
         <TabsRoot default-value="details">
           <TabsList class="tabs-list">
@@ -144,20 +165,19 @@ const slides = [
       display: flex;
       justify-content: space-between;
       margin-top: 12px;
-
-      .date {
-        p {
-          color: #7c859e;
-          font-size: 0.75em;
-        }
-
-        h3 {
-          color: #0f4c59;
-          font-weight: 700;
-          font-size: 0.875em;
-        }
-      }
     }
+  }
+}
+.date {
+  p {
+    color: #7c859e;
+    font-size: 12px;
+  }
+
+  h3 {
+    color: #0f4c59;
+    font-weight: 700;
+    font-size: 14px;
   }
 }
 
@@ -203,6 +223,42 @@ const slides = [
           margin-bottom: 40px;
         }
       }
+    }
+  }
+}
+
+.chart-data {
+  label {
+    font-size: 10px;
+    color: #7c859e;
+  }
+  .layout-fields {
+    display: flex;
+    column-gap: 10px;
+    padding-top: 10px;
+  }
+
+  .input-container {
+    background-color: #edfcff;
+    height: 50px;
+    padding: 0px 10px;
+    position: relative;
+    width: 50%;
+    border-radius: 5px;
+    &:nth-child(1),
+    &:nth-child(3),
+    &:nth-child(4) {
+      width: 50%;
+    }
+    &.resize {
+      width: 28%;
+    }
+    p {
+      font-family: 'Satoshi';
+      font-weight: 700;
+      font-size: 15px;
+      color: #0f4c59;
+      margin-top: 3px;
     }
   }
 }

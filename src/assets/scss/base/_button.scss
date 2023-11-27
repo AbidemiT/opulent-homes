@@ -56,18 +56,18 @@
   margin-bottom: 5px;
   border-radius: 6px;
   &.withdraw {
-    background-color: #FFE0D3;
-    color: #CC4B14;
+    background-color: #ffe0d3;
+    color: #cc4b14;
     font-weight: 700;
   }
   &.add-money {
-    background-color: #E9D9FF;
-    color: #51238D;
+    background-color: #e9d9ff;
+    color: #51238d;
     font-weight: 700;
   }
   &.settings {
-    background-color: #D2EFFF;
-    color: #086D79;
+    background-color: #d2efff;
+    color: #086d79;
     font-weight: 700;
   }
 }
@@ -80,10 +80,32 @@
   // background-color: $dash-abode-color;
   height: 45px;
   padding-inline: 20px;
-  background: linear-gradient(113.11deg, #63C7D3 14.71%, #0593A5 100.23%);
+  background: linear-gradient(113.11deg, #63c7d3 14.71%, #0593a5 100.23%);
   border-radius: 6px;
   font-size: 14px;
   .-icon {
     margin-right: 10px;
+  }
+}
+
+.app-btn {
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  border-radius: 6px;
+  min-width: 80px;
+  height: 41px;
+  background-color: $btn-prim;
+  font-size: 14px;
+  font-weight: 700;
+  color: $color-white;
+  &.orang-btn {
+    background: $btn-orange;
+  }
+  &.btn-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
   }
 }
