@@ -1,8 +1,9 @@
 <template>
   <div class="dashboard__sidebar" :class="{'showSideMenu': isOpen}">
     <div class="logo-container">
-      <img class="dashboard-web" src="../../assets/svgs/abode-dashboard-logo.svg" alt="Abode Logo" />
-      <img class="dashboard-mobile" @click="toggleMenu" src="../../assets/svgs/dashboard-mobile-logo.svg" alt="Abode dashboard mobile logo">
+      <!-- <img class="dashboard-web" src="../../assets/svgs/abode-dashboard-logo.svg" alt="Abode Logo" />
+      <img class="dashboard-mobile" @click="toggleMenu" src="../../assets/svgs/dashboard-mobile-logo.svg" alt="Abode dashboard mobile logo"> -->
+      <h1>Opulent Homes</h1>
     </div>
     <ul class="menu">
       <li class="menu__list">

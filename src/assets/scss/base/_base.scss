@@ -5,7 +5,7 @@
 }
 
 html {
-	background: $color-abode-teal-bg;
+	background: $color-teal-bg;
 	color: $color-dark;
 	height: 100%;
 }
@@ -39,14 +39,14 @@ a {
 }
 
 .atl {
-    color: $color-abode-teal-light;
+    color: $color-teal-light;
 }
 .atr {
-    color: $color-abode-teal-regular;
+    color: $color-teal-regular;
 }
 
 .ao {
-    color: $color-abode-orange;
+    color: $color-orange;
 }
 
 button {
@@ -88,8 +88,8 @@ input {
 }
 
 .v-toast__item--success {
-    background-color: $color-abode-teal-light !important;
+    background-color: $color-teal-light !important;
 }
 .v-toast__item--error {
-    background-color: $color-abode-orange !important;
+    background-color: $color-orange !important;
 }

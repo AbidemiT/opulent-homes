@@ -20,7 +20,7 @@
         transition: all 0.2s ease-in-out;
 
         &.error {
-            border: 1px solid $color-abode-orange;
+            border: 1px solid $color-orange;
             transition: all 0.2s ease-in-out;
         }
 
@@ -44,6 +44,6 @@
     small {
         font-size: 0.75em;
         font-weight: 500;
-        color: $color-abode-orange;
+        color: $color-orange;
     }
 }

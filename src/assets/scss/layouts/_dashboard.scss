@@ -11,7 +11,7 @@
   color: $color-dashboard-color;
 
   .dashboard__sidebar {
-    background-color: $color-abode-teal-grey;
+    background-color: $color-teal-grey;
     // width: calc(1444px - 1168px);
     // overflow-y: scroll;
     // overflow: hidden;
@@ -107,7 +107,7 @@
 
   span {
     font-size: 0.875em;
-    color: $color-abode-teal-light;
+    color: $color-teal-light;
     &.bold {
       font-weight: 500;
     }

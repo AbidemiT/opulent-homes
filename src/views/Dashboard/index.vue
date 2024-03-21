@@ -3,10 +3,10 @@
     <div class="dashboard__wrapper">
         <div class="welcome">
             <div class="sm-profile">
-                <div class="profile--img__container">
+                <!-- <div class="profile--img__container">
                     <img src="../../assets/imgs/favicon.png" alt="Profile picture">
-                </div>
-                <h3>Welcome, Jeffery</h3>
+                </div> -->
+                <h3>Welcome, John Doe</h3>
             </div>
             <small>Quick Overview</small>
             <div class="overview__cards">

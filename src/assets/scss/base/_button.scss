@@ -5,24 +5,24 @@
   margin-top: 36px;
 
   &.atgd {
-    background: linear-gradient(113deg, #63c7d3 14.71%, $color-abode-teal-light 100.23%);
+    background: linear-gradient(113deg, #63c7d3 14.71%, $color-teal-light 100.23%);
     color: $color-white;
 
     &:hover {
       background: linear-gradient(
         113deg,
-        $color-abode-teal-light 14.71%,
-        $color-abode-teal-light 100.23%
+        $color-teal-light 14.71%,
+        $color-teal-light 100.23%
       );
     }
   }
   &.orange {
     border-radius: 6px;
-    background: linear-gradient(113deg, $color-abode-orange 14.71%, $color-abode-orange 100.23%);
+    background: linear-gradient(113deg, $color-orange 14.71%, $color-orange 100.23%);
     color: $color-white;
 
     &:hover {
-      background: linear-gradient(113deg, $color-abode-orange 14.71%, $color-abode-orange 100.23%);
+      background: linear-gradient(113deg, $color-orange 14.71%, $color-orange 100.23%);
     }
   }
 }
@@ -77,7 +77,7 @@
   align-items: center;
   margin: 10px 0;
   width: 100%;
-  // background-color: $dash-abode-color;
+  // background-color: $dash-color;
   height: 45px;
   padding-inline: 20px;
   background: linear-gradient(113.11deg, #63c7d3 14.71%, #0593a5 100.23%);
