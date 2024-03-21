@@ -1,4 +1,4 @@
-# abode-dashboard
+# Opulent Homes
 
-Abode Dashboard.
+Opulent Homes Dashboard.
 
